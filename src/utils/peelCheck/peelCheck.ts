@@ -12,12 +12,23 @@ Player:${JSON.stringify(playerLetters)}`;
   }
 }
 
-type CheckBoardError = BoardPlayerLetterMismatch;
+type PeelCheckError = BoardPlayerLetterMismatch;
 
-export function checkBoard(
+export function peelCheck(
   board: Board,
   player: Player
-): Result<void, CheckBoardError> {
+): Result<void, PeelCheckError> {
+  const letterCheckResult = hasPlayerPlacedAllPieces(board, player);
+  if (letterCheckResult.isErr()) return letterCheckResult;
+
+  console.log("Board check passed!");
+  return ok();
+}
+
+function hasPlayerPlacedAllPieces(
+  board: Board,
+  player: Player
+): Result<void, PeelCheckError> {
   const countedBoardLetters = countLetters(board);
   const compareResult = compareLetters(countedBoardLetters, player.letters);
   if (compareResult.isErr()) {
@@ -29,6 +40,7 @@ export function checkBoard(
     return err(error);
   }
 
-  console.log("Board check passed!");
   return ok();
 }
+
+

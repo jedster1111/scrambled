@@ -21,7 +21,7 @@ describe("checkBoard", async () => {
     namedExports: { compareLetters: compareLettersMock },
   });
 
-  const { checkBoard } = await import("./checkBoard.ts");
+  const { peelCheck: checkBoard } = await import("./peelCheck.ts");
 
   beforeEach(() => {
     countLettersMock.mock.restore();
@@ -39,11 +39,14 @@ describe("checkBoard", async () => {
     compareLettersMock.mock.mockImplementationOnce(() => err(new Error()));
 
     const result = checkBoard(board, player);
+
     assert.equal(compareLettersMock.mock.callCount(), 1);
     assert.ok(result.isErr());
   });
 
   it("should return ok if player owns all letters in board", () => {
+    compareLettersMock.mock.mockImplementationOnce(() => ok());
+
     const result = checkBoard(board, player);
 
     assert.equal(countLettersMock.mock.callCount(), 1);
