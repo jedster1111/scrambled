@@ -1,17 +1,28 @@
 {
   "name": "scrambled2",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node --experimental-strip-types ./src/index.ts",
-    "start:watch": "node --experimental-strip-types --watch ./src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "node": "node --no-warnings=ExperimentalWarning --experimental-strip-types",
+    "start": "npm run node -- ./src/index.ts",
+    "start:watch": "npm run node -- --watch ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:unit": "npm run node -- --experimental-test-module-mocks --import ./src/test/setup.unit.ts --test './src/**/*.test.*'",
+    "test:unit:watch": "npm run node -- --experimental-test-module-mocks --import ./src/test/setup.unit.ts --watch --test './src/**/*.test.*'",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^22.15.3",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "neverthrow": "^8.2.0"
   }
 }
