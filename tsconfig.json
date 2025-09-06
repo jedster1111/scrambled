@@ -4,6 +4,9 @@
   "references": [
     {
       "path": "common"
+    },
+    {
+      "path": "servers/game"
     }
-  ]
+  ],
 }
