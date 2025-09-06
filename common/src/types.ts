@@ -37,3 +37,18 @@ export type Board = {
 export type Player = {
   letters: CountedLetters;
 };
+
+export type Coord = {
+  x: number;
+  y: number;
+};
+
+export type Location = {
+  start: Coord;
+  end: Coord;
+};
+
+export type WordDescription = {
+  location: Location;
+  word: string;
+};

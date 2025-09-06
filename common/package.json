@@ -1,0 +1,27 @@
+{
+  "name": "scrambled",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run node -- ./src/index.ts",
+    "start:watch": "npm run node -- --watch ./src/index.ts",
+    "test": "npm run test:unit",
+    "test:unit": "node --experimental-test-module-mocks --import ./src/test/setup.unit.ts --test './src/**/*.test.*'",
+    "test:unit:watch": "node --experimental-test-module-mocks --import ./src/test/setup.unit.ts --watch --test './src/**/*.test.*'",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^24",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "neverthrow": "^8.2.0"
+  }
+}
