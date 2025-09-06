@@ -7,6 +7,9 @@
     },
     {
       "path": "servers/game"
+    },
+    {
+      "path": "frontend"
     }
   ],
 }

@@ -17,10 +17,12 @@
   },
   "homepage": "https://github.com/jedster1111/scrambled#readme",
   "devDependencies": {
+    "prettier": "^3.6.2",
     "typescript": "^5.9.2"
   },
   "workspaces": [
     "packages/common",
-    "servers/game"
+    "servers/game",
+    "frontend"
   ]
 }

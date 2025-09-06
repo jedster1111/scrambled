@@ -10,6 +10,7 @@ const fastify = Fastify({
 });
 
 fastify.register(FastifyWS);
+
 fastify.register(wsRoutes);
 fastify.register(httpRoutes);
 
