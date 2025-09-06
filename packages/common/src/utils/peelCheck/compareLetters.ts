@@ -13,7 +13,7 @@ type CompareLettersError = DifferentLettersError;
 
 export const compareLetters = (
   lettersA: CountedLetters,
-  lettersB: CountedLetters
+  lettersB: CountedLetters,
 ): Result<void, CompareLettersError> => {
   if (_.isEqual(lettersA, lettersB)) return ok();
   else return err(new DifferentLettersError());

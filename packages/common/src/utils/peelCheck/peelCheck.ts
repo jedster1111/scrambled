@@ -16,7 +16,7 @@ type PeelCheckError = BoardPlayerLetterMismatch;
 
 export function peelCheck(
   board: Board,
-  player: Player
+  player: Player,
 ): Result<void, PeelCheckError> {
   const letterCheckResult = hasPlayerPlacedAllPieces(board, player);
   if (letterCheckResult.isErr()) return letterCheckResult;
@@ -27,14 +27,14 @@ export function peelCheck(
 
 function hasPlayerPlacedAllPieces(
   board: Board,
-  player: Player
+  player: Player,
 ): Result<void, PeelCheckError> {
   const countedBoardLetters = countLetters(board);
   const compareResult = compareLetters(countedBoardLetters, player.letters);
   if (compareResult.isErr()) {
     const error = new BoardPlayerLetterMismatch(
       countedBoardLetters,
-      player.letters
+      player.letters,
     );
     error.cause = compareResult.error;
     return err(error);
@@ -42,5 +42,3 @@ function hasPlayerPlacedAllPieces(
 
   return ok();
 }
-
-

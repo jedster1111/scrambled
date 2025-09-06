@@ -10,7 +10,7 @@ describe("checkBoard", async () => {
   const player: Player = { letters: { A: 2 } };
   const countedBoardLetters: CountedLetters = { A: 3, B: 2, C: 1 };
   let countLettersMock = mock.fn<typeof countLetters>(
-    () => countedBoardLetters
+    () => countedBoardLetters,
   );
   let compareLettersMock = mock.fn<typeof compareLetters>(() => ok());
 
