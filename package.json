@@ -20,7 +20,7 @@
     "typescript": "^5.9.2"
   },
   "workspaces": [
-    "common",
+    "packages/common",
     "servers/game"
   ]
 }

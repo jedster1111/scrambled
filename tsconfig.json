@@ -3,7 +3,7 @@
   "files": [],
   "references": [
     {
-      "path": "common"
+      "path": "packages/common"
     },
     {
       "path": "servers/game"
