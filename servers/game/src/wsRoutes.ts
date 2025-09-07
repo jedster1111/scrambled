@@ -13,7 +13,8 @@ const wsRoutes: FastifyPluginAsync = async (fastify) => {
 
 function messageHandler(this: WebSocket, message: Data) {
   console.log(`Received message: ${message}`);
-  switch (message) {
+
+  switch (message.toString()) {
     case "hello":
       this.send("Why hello there...");
       break;
