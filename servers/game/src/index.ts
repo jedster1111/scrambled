@@ -2,8 +2,11 @@ import Fastify from "fastify";
 import FastifyWS from "@fastify/websocket";
 import httpRoutes from "./httpRoutes.ts";
 import wsRoutes from "./wsRoutes.ts";
+import { sum } from "scrambled-common/index.js";
 
 console.log("Starting game server");
+
+console.log(`sum: ${sum(2, 5)}`);
 
 const fastify = Fastify({
   logger: true,

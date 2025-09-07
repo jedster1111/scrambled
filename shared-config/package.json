@@ -1,0 +1,9 @@
+{
+  "name": "scrambled-shared-config",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "echo 'No build for scaffold project'",
+    "lint": "echo 'No lint for scaffold project'",
+    "start": "echo 'No start for scaffold project'"
+  }
+}

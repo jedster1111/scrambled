@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { countLetters } from "./countLetters.ts";
-import type { Board } from "../../types.ts";
+import { countLetters } from "./countLetters";
+import type { Board } from "../../types";
 
 describe("countLetters", () => {
   it("should convert board to counted letters", () => {

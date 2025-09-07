@@ -1,7 +1,7 @@
 import { err, ok, type Result } from "neverthrow";
-import type { Board, CountedLetters, Letter, Player } from "../../types.ts";
-import { compareLetters } from "./compareLetters.ts";
-import { countLetters } from "./countLetters.ts";
+import type { Board, CountedLetters, Letter, Player } from "../../types.js";
+import { compareLetters } from "./compareLetters.js";
+import { countLetters } from "./countLetters.js";
 
 class BoardPlayerLetterMismatch extends Error {
   constructor(boardLetters: CountedLetters, playerLetters: CountedLetters) {

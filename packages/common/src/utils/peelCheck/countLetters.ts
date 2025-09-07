@@ -1,4 +1,4 @@
-import type { Board, CountedLetters, Letter } from "../../types.ts";
+import type { Board, CountedLetters, Letter } from "../../types.js";
 
 export function countLetters(board: Board): CountedLetters {
   const letters = Object.values(board);

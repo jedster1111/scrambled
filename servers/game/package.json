@@ -1,5 +1,5 @@
 {
-  "name": "game",
+  "name": "scrambled-game",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
@@ -11,6 +11,7 @@
     "start:dev:watch": "node --watch ./src/index.ts"
   },
   "dependencies": {
+    "scrambled-common": "1.0.0",
     "@fastify/websocket": "^11.2.0",
     "fastify": "^5.6.0"
   },

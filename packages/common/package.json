@@ -1,8 +1,11 @@
 {
-  "name": "scrambled",
+  "name": "scrambled-common",
   "type": "module",
+  "private": true,
+  "exports": {
+    "./*": "./dist/*"
+  },
   "version": "1.0.0",
-  "main": "./src/index.ts",
   "scripts": {
     "start": "npm run node -- ./src/index.ts",
     "start:watch": "npm run node -- --watch ./src/index.ts",

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { compareLetters } from "./compareLetters.ts";
+import { compareLetters } from "./compareLetters";
 import type { CountedLetters } from "../../types.ts";
 
 describe("compareLetters", () => {

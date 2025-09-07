@@ -1,7 +1,7 @@
 // Need to check that all tiles are connected in one group, and that all words are valid words.
 
 import { ok, type Result } from "neverthrow";
-import type { WordDescription } from "../../types.ts";
+import type { WordDescription } from "../../types.js";
 
 class WordsNotConnectedError extends Error {
   constructor() {

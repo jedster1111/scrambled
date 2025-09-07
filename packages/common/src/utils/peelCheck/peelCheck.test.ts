@@ -2,8 +2,8 @@ import { after, before, beforeEach, describe, it, mock } from "node:test";
 import assert from "node:assert/strict";
 import { Result, err, ok } from "neverthrow";
 import type { Board, CountedLetters, Player } from "../../types.ts";
-import { countLetters } from "./countLetters.ts";
-import { compareLetters } from "./compareLetters.ts";
+import { countLetters } from "./countLetters";
+import { compareLetters } from "./compareLetters";
 
 describe("checkBoard", async () => {
   const board: Board = { "1,1": "A", "1,2": "A" };
@@ -21,7 +21,7 @@ describe("checkBoard", async () => {
     namedExports: { compareLetters: compareLettersMock },
   });
 
-  const { peelCheck: checkBoard } = await import("./peelCheck.ts");
+  const { peelCheck: checkBoard } = await import("./peelCheck");
 
   beforeEach(() => {
     countLettersMock.mock.restore();

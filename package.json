@@ -1,5 +1,6 @@
 {
   "name": "scrambled2",
+  "private": "true",
   "version": "1.0.0",
   "description": "",
   "lint-staged": {
@@ -7,7 +8,7 @@
   },
   "scripts": {
     "test": "npm run test --workspaces --if-present",
-    "build": "tsc --build --verbose",
+    "build": "tsc --build",
     "prepare": "husky"
   },
   "repository": {
@@ -27,6 +28,7 @@
     "typescript": "^5.9.2"
   },
   "workspaces": [
+    "shared-config",
     "packages/common",
     "servers/game",
     "frontend"

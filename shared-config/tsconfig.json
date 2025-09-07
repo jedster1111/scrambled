@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "incremental": true,
+
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "esnext",
+
+    "noEmitOnError": true,
+
+    "noEmit": true,
+    "declaration": true,
+    "sourceMap": false,
+
+    "outDir": "${configDir}/dist",
+    "declarationDir": "${configDir}/dist",
+    "rootDir": "${configDir}/src",
+
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true
+  },
+  "include": ["${configDir}/src"],
+  "exclude": ["${configDir}/**/*.test.ts", "${configDir}/**/test"]
+}

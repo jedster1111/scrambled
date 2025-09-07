@@ -1,4 +1,4 @@
-import type { CountedLetters, Letter } from "../../types.ts";
+import type { CountedLetters, Letter } from "../../types.js";
 import { err, ok, type Result } from "neverthrow";
 import _ from "lodash";
 
