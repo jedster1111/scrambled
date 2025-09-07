@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { compareLetters } from "./compareLetters";
-import type { CountedLetters } from "../../types.ts";
+import type { CountedLetters } from "../../types.js";
 
 describe("compareLetters", () => {
   it("should return error if total count of letters is different", () => {

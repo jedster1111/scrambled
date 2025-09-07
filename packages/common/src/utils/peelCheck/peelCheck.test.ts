@@ -1,7 +1,7 @@
 import { after, before, beforeEach, describe, it, mock } from "node:test";
 import assert from "node:assert/strict";
 import { Result, err, ok } from "neverthrow";
-import type { Board, CountedLetters, Player } from "../../types.ts";
+import type { Board, CountedLetters, Player } from "../../types.js";
 import { countLetters } from "./countLetters";
 import { compareLetters } from "./compareLetters";
 
