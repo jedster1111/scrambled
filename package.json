@@ -9,7 +9,8 @@
   "scripts": {
     "test": "npm run test --workspaces --if-present",
     "build": "tsc --build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "clean": "bash ./scripts/clean.sh"
   },
   "repository": {
     "type": "git",
