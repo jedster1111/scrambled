@@ -6,9 +6,7 @@
 
     "allowImportingTsExtensions": false,
 
-    "emitDeclarationOnly": false,
-    "noEmit": false,
-    "declaration": true,
-    "sourceMap": true
+    "emitDeclarationOnly": true,
+    "noEmit": false
   }
 }
