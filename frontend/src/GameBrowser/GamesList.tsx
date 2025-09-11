@@ -27,6 +27,7 @@ export const GamesList: FC<GamesListProps> = ({ joinGame }) => {
   const { data: games, refetch } = useSuspenseQuery({
     queryKey: ["games"],
     queryFn: gamesApi.getGames,
+    refetchInterval: 10_000,
   });
 
   const handleClickJoinGame = (gameId: string) => {
