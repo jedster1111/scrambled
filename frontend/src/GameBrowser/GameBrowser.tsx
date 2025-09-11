@@ -1,8 +1,12 @@
-import { type FC } from "react";
+import { type Dispatch, type FC } from "react";
 import { useQuery } from "@tanstack/react-query";
 import gamesApi from "./GamesApi.js";
 
-export const GameBrowser: FC = () => {
+type GameBrowserProps = {
+  setGameId: Dispatch<string>;
+};
+
+export const GameBrowser: FC<GameBrowserProps> = ({ setGameId }) => {
   const {
     status,
     data: games,
@@ -11,6 +15,10 @@ export const GameBrowser: FC = () => {
     queryKey: ["games"],
     queryFn: gamesApi.getGames,
   });
+
+  const handleClickJoinGame = (gameId: string) => {
+    setGameId(gameId);
+  };
 
   if (status === "pending") {
     return <div>Loading...</div>;
@@ -27,7 +35,16 @@ export const GameBrowser: FC = () => {
         <ul>
           {games.map((g) => (
             <li key={g.id}>
-              {g.name} - Players: {g.players.length}
+              <span>
+                {g.name} - Players: {g.players.length}
+              </span>
+              <button
+                onClick={() => {
+                  handleClickJoinGame(g.id);
+                }}
+              >
+                Join
+              </button>
             </li>
           ))}
         </ul>

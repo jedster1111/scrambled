@@ -8,12 +8,7 @@ export const client = axios.create({
 
 const gamesApi = {
   getGames: async () => {
-    try {
-      return (await client.get<GamesDTO>("games")).data;
-    } catch (e) {
-      console.error("Failed to fetch games", e);
-      return [];
-    }
+    return (await client.get<GamesDTO>("games")).data;
   },
 } as const satisfies Api;
 

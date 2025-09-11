@@ -1,12 +1,16 @@
+import { useState } from "react";
 import "./App.css";
-// import { Game } from "./game/Game.js";
+import { Game } from "./game/Game.js";
 import { GameBrowser } from "./GameBrowser/GameBrowser.js";
 
 function App() {
+  const [gameId, setGameId] = useState<string>();
+
   return (
     <>
-      <GameBrowser />
-      {/* <Game /> */}
+      <p>Current gameId: {gameId || "Not joined a game"}</p>
+      <GameBrowser setGameId={setGameId} />
+      {gameId && <Game gameId={gameId} />}
     </>
   );
 }

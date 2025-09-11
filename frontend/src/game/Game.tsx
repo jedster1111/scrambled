@@ -10,9 +10,13 @@ type HelloMessage = Message<"hello", undefined>;
 
 type Messages = HelloMessage;
 
-export const Game: FC = () => {
+type GameProps = {
+  gameId: string;
+};
+
+export const Game: FC<GameProps> = () => {
   const { sendJsonMessage, lastJsonMessage } = useWebSocket<Messages>(
-    "ws://localhost:8080/api/games/ws",
+    "/api/games/ws",
     {
       shouldReconnect: () => true,
       onMessage: (e) => {
