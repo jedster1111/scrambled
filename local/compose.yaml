@@ -1,0 +1,9 @@
+services:
+  reverse-proxy:
+    build: ./reverse-proxy
+    ports:
+      - "8080:80"
+    develop:
+      watch:
+        - action: rebuild
+          path: ./reverse-proxy/nginx.conf

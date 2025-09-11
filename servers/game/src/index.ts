@@ -1,6 +1,5 @@
 import Fastify from "fastify";
 import FastifyWS from "@fastify/websocket";
-import cors from "@fastify/cors";
 import httpRoutes from "./http/httpRoutes.js";
 import wsRoutes from "./wsRoutes.js";
 import { sum } from "scrambled-common";
@@ -11,10 +10,6 @@ console.log(`sum: ${sum(4, 5)}`);
 
 const fastify = Fastify({
   logger: true,
-});
-
-await fastify.register(cors, {
-  origin: true, // TODO: Temporary CORS header fix, should replace with reverse proxy
 });
 
 fastify.register(FastifyWS);
