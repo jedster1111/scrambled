@@ -1,6 +1,6 @@
 import Fastify from "fastify";
 import FastifyWS from "@fastify/websocket";
-import httpRoutes from "./httpRoutes.js";
+import httpRoutes from "./http/httpRoutes.js";
 import wsRoutes from "./wsRoutes.js";
 import { sum } from "scrambled-common";
 
