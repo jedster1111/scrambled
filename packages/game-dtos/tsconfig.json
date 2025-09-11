@@ -1,0 +1,4 @@
+{
+  "extends": "scrambled-shared-config/tsconfig.package.json",
+  "compilerOptions": {}
+}

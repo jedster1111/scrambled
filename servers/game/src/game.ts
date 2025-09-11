@@ -1,12 +1,7 @@
 import { v4 as uuid4 } from "uuid";
 
-import type { Player, PlayerDTO } from "./Player.js";
-
-type GameDTO = {
-  id: string;
-  name: string;
-  players: PlayerDTO[];
-};
+import type { Player } from "./Player.js";
+import type { GameDTO } from "scrambled-game-dtos";
 
 export class Game {
   constructor(name: string) {

@@ -1,11 +1,12 @@
 import "./App.css";
-import { Game } from "./game/Game.js";
+// import { Game } from "./game/Game.js";
+import { GameBrowser } from "./GameBrowser/GameBrowser.js";
 
 function App() {
   return (
     <>
-      <h1>Scrambled</h1>
-      <Game />
+      <GameBrowser />
+      {/* <Game /> */}
     </>
   );
 }

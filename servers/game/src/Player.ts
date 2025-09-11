@@ -1,7 +1,4 @@
-export type PlayerDTO = {
-  id: string;
-  username: string;
-};
+import type { PlayerDTO } from "scrambled-game-dtos";
 
 export class Player {
   constructor(id: string, username: string) {

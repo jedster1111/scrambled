@@ -31,6 +31,7 @@
   "workspaces": [
     "shared-config",
     "packages/common",
+    "packages/game-dtos",
     "servers/game",
     "frontend"
   ]

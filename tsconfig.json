@@ -5,6 +5,9 @@
       "path": "packages/common"
     },
     {
+      "path": "packages/game-dtos"
+    },
+    {
       "path": "servers/game"
     },
     {

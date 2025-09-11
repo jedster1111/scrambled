@@ -1,0 +1,21 @@
+{
+  "name": "scrambled-game-dtos",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^24",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {}
+}

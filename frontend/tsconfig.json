@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "../packages/common"
+    },
+    {
+      "path": "../packages/game-dtos"
     }
   ]
 }
