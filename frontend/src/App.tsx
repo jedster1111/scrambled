@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <p>Current gameId: {gameId || "Not joined a game"}</p>
-      <GameBrowser setGameId={setGameId} />
+      <GameBrowser joinGame={setGameId} />
       {gameId && <Game gameId={gameId} />}
     </>
   );

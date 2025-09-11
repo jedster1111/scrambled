@@ -1,53 +1,29 @@
-import { type Dispatch, type FC } from "react";
-import { useQuery } from "@tanstack/react-query";
-import gamesApi from "./GamesApi.js";
+import { Suspense, type FC } from "react";
+import { GamesList, GamesListError, GamesListLoading } from "./GamesList.js";
+import { ErrorBoundary } from "react-error-boundary";
+import { useQueryErrorResetBoundary } from "@tanstack/react-query";
 
 type GameBrowserProps = {
-  setGameId: Dispatch<string>;
+  joinGame: (gameId: string) => void;
 };
 
-export const GameBrowser: FC<GameBrowserProps> = ({ setGameId }) => {
-  const {
-    status,
-    data: games,
-    error,
-  } = useQuery({
-    queryKey: ["games"],
-    queryFn: gamesApi.getGames,
-  });
-
-  const handleClickJoinGame = (gameId: string) => {
-    setGameId(gameId);
-  };
-
-  if (status === "pending") {
-    return <div>Loading...</div>;
-  }
-
-  if (status === "error") {
-    return <div>Error: {error.message}</div>;
-  }
+export const GameBrowser: FC<GameBrowserProps> = ({ joinGame }) => {
+  const { reset: resetQueryErrorBoundary } = useQueryErrorResetBoundary();
 
   return (
     <div>
       <h1>Game Browser</h1>
       <div>
-        <ul>
-          {games.map((g) => (
-            <li key={g.id}>
-              <span>
-                {g.name} - Players: {g.players.length}
-              </span>
-              <button
-                onClick={() => {
-                  handleClickJoinGame(g.id);
-                }}
-              >
-                Join
-              </button>
-            </li>
-          ))}
-        </ul>
+        <ErrorBoundary
+          onReset={resetQueryErrorBoundary}
+          fallbackRender={({ resetErrorBoundary }) => {
+            return <GamesListError retryLoadGames={resetErrorBoundary} />;
+          }}
+        >
+          <Suspense fallback={<GamesListLoading />}>
+            <GamesList joinGame={joinGame} />
+          </Suspense>
+        </ErrorBoundary>
       </div>
     </div>
   );
